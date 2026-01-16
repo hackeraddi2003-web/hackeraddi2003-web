@@ -1,16 +1,14 @@
-## Hi there 👋
+Hi 👋 I'm Aditya Raj
 
-<!--
-**hackeraddi2003-web/hackeraddi2003-web** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+🎓 MCA Student (Artificial Intelligence) at Parul University  
+💻 Interested in Python, Artificial Intelligence, Machine Learning  
+📚 Currently learning and building projects  
+🚀 Goal: Become a skilled AI Engineer  
 
-Here are some ideas to get you started:
+🛠 Skills:
+- Python  
+- Machine Learning (learning stage)  
+- Data Science basics  
+- Git & GitHub  
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+🔗 LinkedIn: https://www.linkedin.com/in/aditya-raj-9ba235297
