@@ -1,4 +1,4 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fd2790eb-994b-4073-a0f3-f2837e4855e7" />Hi 👋 I'm Aditya Raj
+Hi 👋 I'm Aditya Raj
 
 🎓 MCA Student (Artificial Intelligence) at Parul University  
 💻 Interested in Python, Artificial Intelligence, Machine Learning  
