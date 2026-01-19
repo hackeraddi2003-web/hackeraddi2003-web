@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aditya Raj | Ultra Pro Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Analytics (replace G-XXXXXXX with your ID later) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXX');
+    </script>
+
+    <!-- EmailJS for sending emails -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your public key
+        emailjs.init('Vx742YdS4piIi-yd7');
+    </script>
+
+    <style>
+        :root {
+            --bg: #0b1220;
+            --card: #121a2b;
+            --primary: #38bdf8;
+            --secondary: #a78bfa;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --border: #1f2a44;
+            --pill-bg: #0f172a;
+            --pill-text: #ffffff;
+            --badge-text: #ffffff;
+            --btn-primary-text: #ffffff;
+            --avatar-border: #ffffff;
+            --card-start: #121a2b;
+            --card-end: #0e1627;
+            --nav-bg: rgba(0, 0, 0, 0.45);
+        }
+
+        body.light {
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #0f172a;
+            --muted: #475569;
+            --border: #e2e8f0;
+            --pill-bg: #e2e8f0;
+            --pill-text: #0f172a;
+            --badge-text: #0f172a;
+            --btn-primary-text: #0f172a;
+            --avatar-border: #64748b;
+            --card-start: #ffffff;
+            --card-end: #f8fafc;
+            --nav-bg: rgba(255, 255, 255, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: radial-gradient(1200px 600px at 10% -10%, #1e3a8a33, transparent),
+                radial-gradient(1000px 500px at 110% 10%, #7c3aed33, transparent),
+                var(--bg);
+            color: var(--text);
+            transition: .3s;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: auto;
+            padding: 4rem 1.5rem 2.5rem;
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, #2563eb, #9333ea);
+            padding: .35rem .8rem;
+            border-radius: 999px;
+            font-size: .8rem;
+            color: var(--badge-text);
+            display: inline-block;
+            margin-bottom: .8rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.4rem, 4vw, 3.3rem);
+        }
+
+        .hero p {
+            margin-top: .9rem;
+            color: var(--muted);
+            max-width: 620px;
+        }
+
+        .typing {
+            background: linear-gradient(135deg, #38bdf8, #a78bfa);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 600;
+        }
+
+        .cta {
+            margin-top: 1.6rem;
+            display: flex;
+            gap: .8rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: .75rem 1.1rem;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--text);
+            text-decoration: none;
+            transition: .25s;
+            cursor: pointer;
+        }
+
+        .btn.primary {
+            background: linear-gradient(135deg, #2563eb, #9333ea);
+            color: var(--btn-primary-text);
+            border: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px #00000055;
+        }
+
+        .avatar-wrap {
+            display: grid;
+            place-items: center;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .avatar {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb, #9333ea);
+            padding: 6px;
+            box-shadow: 0 40px 80px #00000066;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--avatar-border);
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(10px);
+            background: var(--nav-bg);
+            border-bottom: 1px solid var(--border);
+            z-index: 50;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: .9rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-inner a {
+            color: var(--muted);
+            text-decoration: none;
+            margin-left: 1rem;
+            font-weight: 500;
+        }
+
+        .nav-inner a:hover {
+            color: var(--primary);
+        }
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 3.2rem 1.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, #38bdf8, #a78bfa);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .grid {
+            display: grid;
+            gap: 1.4rem;
+        }
+
+        .grid.two {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid.three {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .card {
+            background: linear-gradient(180deg, var(--card-start), var(--card-end));
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 1.6rem;
+            transition: .3s;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 60px #00000088;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: .45rem .9rem;
+            background: var(--pill-bg);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            margin: .3rem;
+            font-size: .85rem;
+            color: var(--pill-text);
+        }
+
+        details {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: .9rem 1rem;
+            margin-bottom: .7rem;
+            cursor: pointer;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--muted);
+            font-size: .9rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cta {
+                justify-content: center;
+            }
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--card);
+            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+            justify-content: flex-start;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tab-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--text);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .tab-btn:hover,
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="hero">
+            <div>
+                <span class="badge">🚀 MCA Student (Artificial Intelligence)</span>
+                <h1>Hi, I'm Aditya Raj, <span class="typing" id="typing"></span></h1>
+                <p>Building professional web & AI projects with focus on clean design, performance and continuous
+                    growth.</p>
+                <div class="cta">
+                    <a class="btn primary" href="#projects">View Projects</a>
+                    <a class="btn" href="resume.pdf" target="_blank">Download Resume</a>
+                    <button class="btn" onclick="toggleTheme()">🌙 / ☀️</button>
+                </div>
+            </div>
+
+            <div class="avatar-wrap">
+                <div class="avatar">
+                    <img src="profile.png" alt="Aditya Raj" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-inner">
+            <strong>Aditya Raj</strong>
+            <div>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#journey">Journey</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="grid two">
+            <div class="card">I am pursuing MCA in Artificial Intelligence. I enjoy building real projects in Python,
+                Web and AI with focus on professional growth.</div>
+            <div class="card">🎓 MCA (AI) | 💻 Python, Web | 📍 India | 🚀 Growing every day</div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="card">
+            <span class="pill">Python</span>
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+            <span class="pill">Java</span>
+            <!-- <span class="pill">Machine Learning</span> -->
+            <!-- <span class="pill">Data Science</span> -->
+            <span class="pill">Git & GitHub</span>
+            <span class="pill">SQL</span>
+            <span class="pill">Problem Solving</span>
+            <span class="pill">Team Collaboration</span>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="grid three">
+            <div class="card" data-category="web" style="position: relative;">
+                <a class="btn primary" href="https://hackeraddi2003-web.github.io/MCA-Notes_Hub/" target="_blank"
+                    style="position: absolute; top: 1rem; right: 1rem; z-index: 1; padding: 0.5rem 0.8rem; font-size: 0.8rem;">Live
+                    Demo</a>
+                <h3 style="margin-bottom: 1rem;">MCA Notes Hub</h3>
+                <p>A comprehensive web platform for MCA students to access study materials and notes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="journey">
+        <h2 class="section-title">My Journey</h2>
+        <div class="card">2021–2024: BCA → 2025–2027: MCA (AI) → Building real-world projects</div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="grid two">
+            <div class="card">
+                <h3>Get In Touch</h3>
+                <p>Feel free to reach out for collaborations, opportunities, or just to say hi!</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/aditya-raj-9ba235297" class="btn social-btn"><i
+                            class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/hackeraddi2003-web" class="btn social-btn"><i class="fab fa-github"></i>
+                        GitHub</a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=adityaraj19735@gmail.com" target="_blank"
+                        class="btn social-btn"><i class="fas fa-envelope"></i> Gmail</a>
+                </div>
+            </div>
+            <div class="card">
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Aditya Raj</p>
+    </footer>
+
+    <button id="scrollTop" class="btn" style="position: fixed; bottom: 20px; right: 20px; display: none;">↑</button>
+
+    <script>
+        // Typing effect
+        const text = "a Passionate Developer";
+        let i = 0;
+        function typeEffect() {
+            if (i < text.length) {
+                document.getElementById("typing").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeEffect, 120);
+            }
+        }
+        typeEffect();
+
+        // Theme toggle
+        function toggleTheme() {
+            document.body.classList.toggle('light');
+        }
+
+        // Scroll animation
+        const cards = document.querySelectorAll('.card');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+        });
+        cards.forEach(card => observer.observe(card));
+
+        // Contact form with EmailJS integration
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            // Send email using EmailJS
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                .then(function () {
+                    alert('message sent on mail successfully');
+                    document.getElementById('contact-form').reset(); // Clear the form
+                }, function (error) {
+                    alert('not sent try again');
+                });
+        });
+        // Scroll to top
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.style.display = 'block';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Project tabs
+        function filterProjects(category, event) {
+            const cards = document.querySelectorAll('#projects .card');
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }    </script>
+
+</body>
+
+</html>
